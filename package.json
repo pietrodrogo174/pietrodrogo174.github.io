@@ -1,8 +1,0 @@
-{
-  "name": "pietro-drogo-portfolio",
-  "private": true,
-  "version": "1.0.0",
-  "dependencies": {
-    "@netlify/blobs": "^9.0.0"
-  }
-}

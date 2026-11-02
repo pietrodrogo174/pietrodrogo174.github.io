@@ -1,17 +1,23 @@
-# Pietro Drogo — Professional Portfolio
+# Pietro Drogo - Professional Portfolio
 
-Static site with Netlify Functions and Netlify Blobs document library.
+Static HTML, CSS and JavaScript portfolio prepared for GitHub Pages.
 
-## Deployment
+## Hosting
 
-Connect this private repository to the **existing** Netlify site. Branch `main`, base directory blank, build command blank, publish directory `.`. Netlify reads `netlify.toml` and installs `@netlify/blobs`.
+For account pietrodrogo174, name the repository pietrodrogo174.github.io. The site URL will be https://pietrodrogo174.github.io/. The exact address pietrodrogo.github.io requires ownership of the account pietrodrogo.
 
-Required production environment secret: `PORTFOLIO_ADMIN_PASSWORD` (already set in Netlify).
+With GitHub Free, use a public repository. In Settings > Pages, select Deploy from a branch, branch main, folder / (root). No build or dependencies are required. .nojekyll keeps files unchanged.
 
-Public documents: `/#recruiter-documents`. Owner admin: `/admin.html`.
+## Update documents
 
-**Limit:** maximum 3 MB per uploaded file; supported PDF/JPG/PNG/DOCX/XLSX/TXT. This deliberately avoids large synchronous Function payloads. Larger files require direct-to-storage upload with short-lived signed URLs. Do not upload confidential material.
+Add or replace files in assets/, update the recruiter document links in index.html, then commit and push to main.
 
-**Security:** owner password is checked on the server, not included in the frontend. The admin page itself is public but write actions require the password. For high-security production use, add identity-based authentication, rate limiting and monitoring.
+GitHub Pages serves static files. The former Netlify password/upload interface is replaced with direct downloads. Files stored only in Netlify Blobs must be exported separately if needed.
 
-**Note:** changes to this repository trigger deployments once connected. Verify the live site after first deploy.
+## Local preview
+
+Serve this directory with any static HTTP server and open index.html. No installation is required.
+
+## Change history
+
+The original repository history is preserved. The Netlify migration and Pages configuration are separate commits.

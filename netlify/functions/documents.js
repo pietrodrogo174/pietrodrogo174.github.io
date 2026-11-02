@@ -1,4 +1,4 @@
-const { getStore } = require('@netlify/blobs');
+const { getStore, connectLambda } = require('@netlify/blobs');
 const crypto = require('node:crypto');
 const MAX = 3 * 1024 * 1024;
 const types = {'application/pdf':'.pdf','image/jpeg':'.jpg','image/png':'.png','application/vnd.openxmlformats-officedocument.wordprocessingml.document':'.docx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':'.xlsx','text/plain':'.txt'};
@@ -7,6 +7,7 @@ const json=(statusCode,data)=>({statusCode,headers:{...headers,'Content-Type':'a
 function authorized(event){const expected=process.env.PORTFOLIO_ADMIN_PASSWORD;const given=event.headers['x-admin-password'];if(!expected||!given)return false;const a=crypto.createHash('sha256').update(expected).digest();const b=crypto.createHash('sha256').update(given).digest();return crypto.timingSafeEqual(a,b)}
 exports.handler=async(event)=>{
  try{
+ connectLambda(event);
  const method=event.httpMethod;
  if(method==='POST' || method==='DELETE'){
   if(!authorized(event))return json(401,{error:'Access denied'});

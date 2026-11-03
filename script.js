@@ -125,7 +125,7 @@ const competencies=[
  ['HSEQ & crew leadership','Leadership of safe, compliant drilling execution through risk-based planning, Permit to Work, LOTO, simultaneous operations control, incident prevention, emergency preparedness, inspections, audits and crew competency development. Direct accountability for effective communication and coordination across clients, contractors and multicultural teams.'],
  ['Automation & digital operations','Operational understanding of automated hydraulic rigs, control architecture and integrated drilling data. Use of HMI/PLC diagnostics, electrical and hydraulic schematics, sensor trends, EDR systems and equipment histories to support troubleshooting, reliability and informed operational decisions.'],
 ];
-document.querySelector('#competencies').innerHTML=competencies.map((c,i)=>`<details class="competency" ${i===0?'open':''}><summary>${c[0]}</summary><p>${c[1]}</p></details>`).join('');
+document.querySelector('#competencies').innerHTML=competencies.map((c,i)=>`<details class="competency"><summary>${c[0]}</summary><p>${c[1]}</p></details>`).join('');
 const dialog=document.querySelector('#lightbox');
 let returnFocus;
 function showImage(index){currentImage=(index+groups.length)%groups.length;const g=groups[currentImage];document.querySelector('#lightbox-title').textContent=g[0];document.querySelector('#lightbox-image').src=`assets/exhibit-${String(currentImage+1).padStart(2,'0')}.png`;document.querySelector('#lightbox-image').alt=g[0]+' — original technical evidence';document.querySelector('#image-counter').textContent=`${currentImage+1} / ${groups.length}`;}

@@ -3,7 +3,7 @@ const careers = [
   "2022 – Present",
   "Rig Manager / Superintendent",
   "Petreven Brazil – MEIL Group",
-  "Rio Grande do Norte & Salvador de Bahia, Brazil",
+  "State of Rio Grande do Norte & Salvador, State of Bahia, Brazil",
   [
    "Managed drilling operations for HH102 and HH300 rigs.",
    "Oversaw budgeting, operational cost control and budget performance monitoring.",

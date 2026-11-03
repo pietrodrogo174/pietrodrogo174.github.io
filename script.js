@@ -96,7 +96,7 @@ const careers = [
   ]
  ]
 ];
-document.querySelector('#career-list').innerHTML = careers.map((c,i)=>`<article class="career-row"><div class="career-date ${i===0?'current':''}">${i===0?'● ':''}${c[0]}</div><details ${i===0?'open':''}><summary><h3>${c[1]}</h3><div class="career-meta"><span>${c[2]}</span>${c[3]}</div></summary><ul>${c[4].map(t=>`<li>${t}</li>`).join('')}</ul></details></article>`).join('');
+document.querySelector('#career-list').innerHTML = careers.map((c,i)=>`<article class="career-row"><div class="career-date ${i===0?'current':''}">${i===0?'● ':''}${c[0]}</div><details><summary><h3>${c[1]}</h3><div class="career-meta"><span>${c[2]}</span>${c[3]}</div></summary><ul>${c[4].map(t=>`<li>${t}</li>`).join('')}</ul></details></article>`).join('');
 const groups = [
  ['Drilling site civil works','engineering'],['Cellar construction','engineering'],['Cellar reinforcement detail','engineering'],['Well positioning & PAD layout','engineering'],
  ['Site arrangement drawing','engineering'],['Rig layout & interfaces','engineering'],['Rig floor components legend','engineering'],['Move planning schedule','logistics'],
